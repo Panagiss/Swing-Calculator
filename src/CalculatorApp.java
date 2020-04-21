@@ -50,6 +50,8 @@ public class CalculatorApp {
         Font font = new Font("Tahoma",Font.BOLD,12);
         Font font2 = new Font("Tahoma",Font.BOLD,20);
         Font font3 = new Font("Tahoma",Font.BOLD,15);
+        ImageIcon calc = new ImageIcon("img/img2.png");
+        frame.setIconImage(calc.getImage());
 
         panel=new JPanel();
         panel.setLayout(null);
@@ -60,7 +62,6 @@ public class CalculatorApp {
         display.setEditable(true);
         display.setText("");
         display.setFont(font2);
-        //display.setFont();
         panel.add(display);
 
         label=new JLabel();
@@ -73,11 +74,28 @@ public class CalculatorApp {
         myB=new JButton(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                JFrame nFrame=new JFrame();
+                nFrame.setTitle("Empty Button");
+                nFrame.setLocation(50,250);
+                nFrame.setSize(250,250);
+                nFrame.setResizable(false);
+                JPanel nPanel=new JPanel();
+                nPanel.setLayout(null);
 
+                JTextField text =new JTextField();
+                text.setBounds(0,0,245,245);
+                text.setHorizontalAlignment(SwingConstants.CENTER);
+                text.setEditable(false);
+                text.setText("Empty Button\nTry to add new Functionality");
+                text.setFont(font);
+                nPanel.add(text);
+
+                nFrame.add(nPanel);
+                nFrame.setVisible(true);
             }
         });
         myB.setBounds(3,85,65,45);
-        myB.setText("MYB");
+        myB.setText("*_*");
         myB.setFont(font);
         panel.add(myB);
 
@@ -104,6 +122,9 @@ public class CalculatorApp {
             @Override
             public void actionPerformed(ActionEvent e) {
                 display.setText("");
+                num=0;
+                ans=0;
+                label.setText("");
             }
         });
         buttonC.setBounds(150,95,58,35);
