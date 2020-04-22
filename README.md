@@ -1,5 +1,5 @@
 # Simple-Java-Calculator
-Simple Java Calculator using Swing GUI library.
+Simple Java Calculator using Swing GUI toolkit.
 
 # Mathematical Operations Supported
 1) Addition
@@ -8,4 +8,4 @@ Simple Java Calculator using Swing GUI library.
 4) Division
 
 # Notes
-It only supports one arithmical operation at a time. Multiple support may come later.
+It only supports one arithmical operation at a time. Multiple support may come later. This simple program it was made just to experiment with GUI in Java and specifically Swing.
