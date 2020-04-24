@@ -82,11 +82,11 @@ public class CalculatorApp {
                 JPanel nPanel=new JPanel();
                 nPanel.setLayout(null);
 
-                JTextField text =new JTextField();
+                JTextArea text =new JTextArea();
                 text.setBounds(0,0,245,245);
-                text.setHorizontalAlignment(SwingConstants.CENTER);
+
                 text.setEditable(false);
-                text.setText("Empty Button\nTry to add new Functionality");
+                text.append("Empty Button\nTry to add new Functionality");
                 text.setFont(font);
                 nPanel.add(text);
 
