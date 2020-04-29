@@ -4,11 +4,7 @@ import java.awt.event.ActionEvent;
 
 public class CalculatorApp {
 
-    private static JFrame frame;
-    private static JPanel panel;
     private static JTextField display;
-    private static JButton myB,buttonBS,buttonC,buttonPlus;
-    private static JButton B1,B2,B3,B4,B5,B6,B7,B8,B9,B10,B11,B12,B13,B14,B15;
     public static JLabel label;
 
     public static double num,ans ;
@@ -40,7 +36,7 @@ public class CalculatorApp {
 
 
     public static void main(String [] argv){
-        frame=new JFrame();
+        JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setTitle("Calculator");
         frame.setLocation(500,250);
@@ -53,7 +49,7 @@ public class CalculatorApp {
         ImageIcon calc = new ImageIcon("img/img2.png");
         frame.setIconImage(calc.getImage());
 
-        panel=new JPanel();
+        JPanel panel = new JPanel();
         panel.setLayout(null);
 
         display =new JTextField();
@@ -71,19 +67,19 @@ public class CalculatorApp {
         label.setFont(font);
         panel.add(label);
 
-        myB=new JButton(new AbstractAction() {
+        JButton myB = new JButton(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrame nFrame=new JFrame();
+                JFrame nFrame = new JFrame();
                 nFrame.setTitle("Empty Button");
-                nFrame.setLocation(50,250);
-                nFrame.setSize(250,250);
+                nFrame.setLocation(50, 250);
+                nFrame.setSize(250, 250);
                 nFrame.setResizable(false);
-                JPanel nPanel=new JPanel();
+                JPanel nPanel = new JPanel();
                 nPanel.setLayout(null);
 
-                JTextArea text =new JTextArea();
-                text.setBounds(0,0,245,245);
+                JTextArea text = new JTextArea();
+                text.setBounds(0, 0, 245, 245);
 
                 text.setEditable(false);
                 text.append("Empty Button\nTry to add new Functionality");
@@ -99,228 +95,228 @@ public class CalculatorApp {
         myB.setFont(font);
         panel.add(myB);
 
-        buttonBS=new JButton(new AbstractAction() {
+        JButton buttonBS = new JButton(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 int length = display.getText().length();
                 String newStr;
 
-                if(length>0){
-                    StringBuilder b=new StringBuilder(display.getText());
-                    b.deleteCharAt(length-1);
-                    newStr=b.toString();
+                if (length > 0) {
+                    StringBuilder b = new StringBuilder(display.getText());
+                    b.deleteCharAt(length - 1);
+                    newStr = b.toString();
                     display.setText(newStr);
                 }
             }
         });
-        buttonBS.setBounds(80,95,58,35);
+        buttonBS.setBounds(80,95,60,35);
         buttonBS.setText("<--");
         buttonBS.setFont(font3);
         panel.add(buttonBS);
 
-        buttonC=new JButton(new AbstractAction() {
+        JButton buttonC = new JButton(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 display.setText("");
-                num=0;
-                ans=0;
+                num = 0;
+                ans = 0;
                 label.setText("");
             }
         });
-        buttonC.setBounds(150,95,58,35);
+        buttonC.setBounds(150,95,60,35);
         buttonC.setText("C");
         buttonC.setFont(font3);
         panel.add(buttonC);
 
-        buttonPlus=new JButton(new AbstractAction() {
+        JButton buttonPlus = new JButton(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 num = Double.parseDouble(display.getText());
-                operation=1;
+                operation = 1;
                 display.setText("");
-                label.setText(num+"+");
+                label.setText(num + "+");
             }
         });
-        buttonPlus.setBounds(220,95,58,35);
+        buttonPlus.setBounds(220,95,60,35);
         buttonPlus.setText("+");
         buttonPlus.setFont(font3);
         panel.add(buttonPlus);
 
 
-        B1=new JButton(new AbstractAction() {
+        JButton b7 = new JButton(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                display.setText(display.getText()+"7");
+                display.setText(display.getText() + "7");
             }
         });
-        B1.setBounds(5,160,53,33);
-        B1.setText("7");
-        B1.setFont(font);
-        panel.add(B1);
+        b7.setBounds(5,160,53,33);
+        b7.setText("7");
+        b7.setFont(font);
+        panel.add(b7);
 
-        B2=new JButton(new AbstractAction() {
+        JButton b8 = new JButton(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                display.setText(display.getText()+"8");
+                display.setText(display.getText() + "8");
             }
         });
-        B2.setBounds(75,160,53,33);
-        B2.setText("8");
-        B2.setFont(font);
-        panel.add(B2);
+        b8.setBounds(75,160,53,33);
+        b8.setText("8");
+        b8.setFont(font);
+        panel.add(b8);
 
-        B3=new JButton(new AbstractAction() {
+        JButton b9 = new JButton(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                display.setText(display.getText()+"9");
+                display.setText(display.getText() + "9");
             }
         });
-        B3.setBounds(145,160,53,33);
-        B3.setText("9");
-        B3.setFont(font);
-        panel.add(B3);
+        b9.setBounds(145,160,53,33);
+        b9.setText("9");
+        b9.setFont(font);
+        panel.add(b9);
 
-        B4=new JButton(new AbstractAction() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                num = Double.parseDouble(display.getText());
-                operation=2;
-                display.setText("");
-                label.setText(num+"-");
-            }
-        });
-        B4.setBounds(220,160,58,33);
-        B4.setText("-");
-        B4.setFont(font3);
-        panel.add(B4);
-
-        B5=new JButton(new AbstractAction() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                display.setText(display.getText()+"4");
-            }
-        });
-        B5.setBounds(5,220,53,33);
-        B5.setText("4");
-        B5.setFont(font);
-        panel.add(B5);
-
-        B6=new JButton(new AbstractAction() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                display.setText(display.getText()+"5");
-            }
-        });
-        B6.setBounds(75,220,53,33);
-        B6.setText("5");
-        B6.setFont(font);
-        panel.add(B6);
-
-        B7=new JButton(new AbstractAction() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                display.setText(display.getText()+"6");
-            }
-        });
-        B7.setBounds(145,220,53,33);
-        B7.setText("6");
-        B7.setFont(font);
-        panel.add(B7);
-
-        B8=new JButton(new AbstractAction() {
+        JButton bMinus = new JButton(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 num = Double.parseDouble(display.getText());
-                operation=3;
+                operation = 2;
                 display.setText("");
-                label.setText(num+"*");
+                label.setText(num + "-");
             }
         });
-        B8.setBounds(220,220,58,33);
-        B8.setText("*");
-        B8.setFont(font3);
-        panel.add(B8);
+        bMinus.setBounds(220,160,60,33);
+        bMinus.setText("-");
+        bMinus.setFont(font3);
+        panel.add(bMinus);
 
-        B9=new JButton(new AbstractAction() {
+        JButton b4 = new JButton(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                display.setText(display.getText()+"1");
+                display.setText(display.getText() + "4");
             }
         });
-        B9.setBounds(5,275,53,33);
-        B9.setText("1");
-        B9.setFont(font);
-        panel.add(B9);
+        b4.setBounds(5,220,53,33);
+        b4.setText("4");
+        b4.setFont(font);
+        panel.add(b4);
 
-        B10=new JButton(new AbstractAction() {
+        JButton b5 = new JButton(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                display.setText(display.getText()+"2");
+                display.setText(display.getText() + "5");
             }
         });
-        B10.setBounds(75,275,53,33);
-        B10.setText("2");
-        B10.setFont(font);
-        panel.add(B10);
+        b5.setBounds(75,220,53,33);
+        b5.setText("5");
+        b5.setFont(font);
+        panel.add(b5);
 
-        B11=new JButton(new AbstractAction() {
+        JButton b6 = new JButton(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                display.setText(display.getText()+"3");
+                display.setText(display.getText() + "6");
             }
         });
-        B11.setBounds(145,275,53,33);
-        B11.setText("3");
-        B11.setFont(font);
-        panel.add(B11);
+        b6.setBounds(145,220,53,33);
+        b6.setText("6");
+        b6.setFont(font);
+        panel.add(b6);
 
-        B12=new JButton(new AbstractAction() {
+        JButton bMulti = new JButton(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 num = Double.parseDouble(display.getText());
-                operation=4;
+                operation = 3;
                 display.setText("");
-                label.setText(num+"/");
+                label.setText(num + "*");
             }
         });
-        B12.setBounds(220,275,58,33);
-        B12.setText("/");
-        B12.setFont(font3);
-        panel.add(B12);
+        bMulti.setBounds(220,220,60,33);
+        bMulti.setText("*");
+        bMulti.setFont(font3);
+        panel.add(bMulti);
 
-        B13=new JButton(new AbstractAction() {
+        JButton b1 = new JButton(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                display.setText(display.getText()+"0");
+                display.setText(display.getText() + "1");
             }
         });
-        B13.setBounds(5,325,53,33);
-        B13.setText("0");
-        B13.setFont(font);
-        panel.add(B13);
+        b1.setBounds(5,275,53,33);
+        b1.setText("1");
+        b1.setFont(font);
+        panel.add(b1);
 
-        B14=new JButton(new AbstractAction() {
+        JButton b2 = new JButton(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                display.setText(display.getText()+".");
+                display.setText(display.getText() + "2");
             }
         });
-        B14.setBounds(75,325,53,33);
-        B14.setText(".");
-        B14.setFont(font);
-        panel.add(B14);
+        b2.setBounds(75,275,53,33);
+        b2.setText("2");
+        b2.setFont(font);
+        panel.add(b2);
 
-        B15=new JButton(new AbstractAction() {
+        JButton b3 = new JButton(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                display.setText(display.getText() + "3");
+            }
+        });
+        b3.setBounds(145,275,53,33);
+        b3.setText("3");
+        b3.setFont(font);
+        panel.add(b3);
+
+        JButton bDiv = new JButton(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                num = Double.parseDouble(display.getText());
+                operation = 4;
+                display.setText("");
+                label.setText(num + "/");
+            }
+        });
+        bDiv.setBounds(220,275,60,33);
+        bDiv.setText("/");
+        bDiv.setFont(font3);
+        panel.add(bDiv);
+
+        JButton b0 = new JButton(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                display.setText(display.getText() + "0");
+            }
+        });
+        b0.setBounds(5,325,53,33);
+        b0.setText("0");
+        b0.setFont(font);
+        panel.add(b0);
+
+        JButton bComma = new JButton(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                display.setText(display.getText() + ".");
+            }
+        });
+        bComma.setBounds(75,325,53,33);
+        bComma.setText(".");
+        bComma.setFont(font);
+        panel.add(bComma);
+
+        JButton bEqual = new JButton(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 arith_operation();
                 label.setText("");
             }
         });
-        B15.setBounds(145,325,133,33);
-        B15.setText("=");
-        B15.setFont(font3);
-        panel.add(B15);
+        bEqual.setBounds(145,325,133,33);
+        bEqual.setText("=");
+        bEqual.setFont(font3);
+        panel.add(bEqual);
 
         frame.add(panel);
         frame.setVisible(true);
