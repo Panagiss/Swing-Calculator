@@ -1,3 +1,5 @@
+import com.sun.tools.javac.Main;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -46,8 +48,9 @@ public class CalculatorApp {
         Font font = new Font("Tahoma",Font.BOLD,12);
         Font font2 = new Font("Tahoma",Font.BOLD,20);
         Font font3 = new Font("Tahoma",Font.BOLD,15);
-        ImageIcon calc = new ImageIcon("img/img2.png");
+        ImageIcon calc = new ImageIcon(CalculatorApp.class.getResource("img2.png"));
         frame.setIconImage(calc.getImage());
+        //JFrame.setDefaultLookAndFeelDecorated(true);
 
         JPanel panel = new JPanel();
         panel.setLayout(null);
